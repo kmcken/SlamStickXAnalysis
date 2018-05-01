@@ -9,6 +9,22 @@ runlog = logging.getLogger('runlog')
 alglog = logging.getLogger('alglog')
 
 
+def read_first_line(file):
+    """
+    Reads the header and first line.
+
+    :param file: File path
+    :type file: str
+    :return: First two lines
+    :rtype: list
+    """
+    f = open(file)
+    lines = list()
+    lines.append(f.readline())
+    f.close()
+    return lines
+
+
 def is_file_large(file, limit=1e8):
     """
     Checks if file is larger than the limit.
